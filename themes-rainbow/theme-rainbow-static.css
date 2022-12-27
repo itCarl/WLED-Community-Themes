@@ -1,0 +1,39 @@
+:root {
+    --gbl-border: .75em;
+    --gbl-main-clr: rgba(0, 68, 255, .55);
+    
+    --gbl-rainbow: linear-gradient(180deg,
+        rgba(254, 0, 0, .35) 16.66%,
+        rgba(253, 140, 0, .35) 0, 33.32%,
+        rgba(255, 229, 0, .35) 33.32%, 49.98%,
+        rgba(17, 159, 11, .35) 49.98%, 66.64%,
+        rgba(6, 68, 179, .35) 66.64%, 83.3%,
+        rgba(194, 46, 220, .35) 83.3%);
+
+    --c-tb: var(--gbl-rainbow) !important;
+}
+
+#namelabel::after {
+    content: " [Theme: rainbow-static]";
+    font-size: .75em;
+}
+
+input[type=text] {
+    border-radius: var(--gbl-border) !important;
+}
+
+button[type=submit] {
+    border-radius: var(--gbl-border) !important;
+}
+
+.lstI {
+    border-radius: var(--gbl-border);
+}
+
+.seg .btn {
+    border-radius: var(--gbl-border);
+}
+
+#fxlist .lstI.selected {
+    background-color: var(--gbl-main-clr);
+}
