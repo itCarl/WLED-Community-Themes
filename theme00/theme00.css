@@ -1,0 +1,31 @@
+:root {
+    --gbl-border: .75em;
+    --gbl-main-clr: rgba(0, 68, 255, .55);
+    
+    --c-tb: var(--gbl-main-clr) !important;
+}
+
+#namelabel::after {
+    content: " [Theme: theme00]";
+    font-size: .75em;
+}
+
+input[type=text] {
+    border-radius: var(--gbl-border) !important;
+}
+
+button[type=submit] {
+    border-radius: var(--gbl-border) !important;
+}
+
+.lstI {
+    border-radius: var(--gbl-border);
+}
+
+.seg .btn {
+    border-radius: var(--gbl-border);
+}
+
+#fxlist .lstI.selected {
+    background-color: var(--gbl-main-clr);
+}

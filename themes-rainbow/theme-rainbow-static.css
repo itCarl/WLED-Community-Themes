@@ -26,7 +26,11 @@
     font-size: .75em;
 }
 
-input[type=text] {
+input[type="text"] {
+    border-radius: var(--gbl-border) !important;
+}
+
+button[type="submit"] {
     border-radius: var(--gbl-border) !important;
 }
 
@@ -49,4 +53,33 @@ input[type=text] {
 .radio .radiomark,
 .radio .radiomark:after {
     border-radius: 8px;
+}
+
+/* Left align list items, for better readabillity*/
+.lstIcontent {
+    padding: 9px 2.5em 7px;
+    text-align: left;
+}
+
+#sliders {
+    width: 90%;
+    background-color: var(--c-2);
+    border-radius: 1em 1em 0px 0px;
+    overflow: hidden;
+}
+
+#filters {
+    border-radius:0;
+    padding: 6px 2px;
+    margin-bottom: 10px;
+    height: auto;
+}
+
+.slider {
+    border-radius: 0;
+    background-color: none !important;
+}
+
+.slider .sliderwrap {
+    width: 90%;
 }
