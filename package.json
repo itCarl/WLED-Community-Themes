@@ -1,0 +1,31 @@
+{
+  "name": "wled-community-themes",
+  "version": "0.0.1",
+  "description": "A collection of styles for your WLED installation",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "compile": "sass --no-source-map --style=compressed src:compiled"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itCarl/WLED-Community-Themes.git"
+  },
+  "keywords": [
+    "styles",
+    "wled",
+    "skin.css",
+    "user interface",
+    "gui",
+    "creative",
+    "custimization"
+  ],
+  "author": "Maximilian Mewes",
+  "bugs": {
+    "url": "https://github.com/itCarl/WLED-Community-Themes/issues"
+  },
+  "homepage": "https://github.com/itCarl/WLED-Community-Themes#readme",
+  "dependencies": {
+    "sass": "^1.57.1"
+  }
+}
