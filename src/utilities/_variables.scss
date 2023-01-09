@@ -1,5 +1,23 @@
-$fonts: 'Poppins', Helvetica, sans-serif;
-$primary-color: #ab99ca;
+
+/*===================================================
+        Colors
+===================================================*/
+
+$clr-primary: red;
+$clr-secondary: #343a40;
+
+$clr-rb-opacity: 1;
+$clr-rb: linear-gradient(180deg,
+    rgba(254, 0, 0, $clr-rb-opacity) 16.66%,
+    rgba(253, 140, 0, $clr-rb-opacity) 0, 33.32%,
+    rgba(255, 229, 0, $clr-rb-opacity) 33.32%, 49.98%,
+    rgba(17, 159, 11, $clr-rb-opacity) 49.98%, 66.64%,
+    rgba(6, 68, 179, $clr-rb-opacity) 66.64%, 83.3%,
+    rgba(194, 46, 220, $clr-rb-opacity) 83.3%);
+
+    
+/*===================================================
+        Spacing
+===================================================*/
 $spacing: 2rem;
-$dark-grey: #999;
-$border-radius: .5em;
+$gbl-border: .75em;

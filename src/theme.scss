@@ -1,0 +1,43 @@
+@import 'utilities/variables';
+@import 'utilities/mixins';
+
+// import/select theme here
+@import 'theme00';
+// @import 'theme-rainbow-static';
+
+
+/* ===================== Don't change anything below this ===================== */
+#namelabel::after {
+    content: $theme-name;
+    font-size: .75em;
+}
+
+body
+{
+    background-color: $clr-secondary;
+}
+
+input[type=text] {
+    border-radius: $gbl-border !important;
+}
+
+button[type=submit] {
+    border-radius: $gbl-border !important;
+}
+
+.lstI {
+    border-radius: $gbl-border;
+}
+
+.seg .btn {
+    border-radius: $gbl-border;
+}
+
+#fxlist .lstI.selected {
+    @include rb(.5);
+}
+
+.radio .radiomark,
+.radio .radiomark:after {
+    border-radius: 8px;
+}
