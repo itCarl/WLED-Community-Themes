@@ -29,3 +29,11 @@ $mobile-breakpoint: 480px !default;
         padding: 8px 40px 8px 44px !important;
     }
 }
+
+// Segment brightness sliders: stock WLED fixes them at 230px; use the full row next to the power icon
+.seg .sbs .sliderwrap {
+    width: calc(100% - 64px) !important;
+    max-width: none !important;
+
+    input { width: 100% !important; }
+}
