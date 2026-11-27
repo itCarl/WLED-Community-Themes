@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "A collection of styles for your WLED installation",
   "license": "MIT",
-  "main": "index.js",
   "scripts": {
     "dev": "sass --no-source-map --style=compressed --load-path=shared themes:themes"
   },

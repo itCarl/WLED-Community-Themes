@@ -22,6 +22,7 @@ $x-snow:       rgba(255, 255, 255, .07) !default;  // snow dots
 $x-green:      #3fae5a !default;
 $x-red:        #d8343a !default;
 $x-name:       "Xmas" !default;
+$x-background: snow-dots !default;               // see shared/backgrounds/xmas: snow-dots, snowfall, stars, bokeh, tree-pattern, gifts, train, own-image
 
 // WLED sets its colour variables at runtime, so they need !important to stick.
 html:root {
@@ -46,15 +47,8 @@ html:root {
     --c-r: #{$x-red} !important;
 }
 
-body {
-    background-color: $x-c1 !important;
-    background-image:
-        radial-gradient(circle at 50% -10%, $x-glow, transparent 55%),
-        radial-gradient($x-snow 1px, transparent 1.5px),
-        radial-gradient($x-snow 1px, transparent 1.5px) !important;
-    background-size: 100% 100%, 46px 46px, 73px 73px !important;
-    background-position: 0 0, 0 0, 23px 31px !important;
-}
+@import 'backgrounds/xmas/backgrounds';
+@include x-background($x-background, $x-c1, $x-glow, $x-snow, $x-accent, $x-red, $x-green);
 
 .lstI, .pres, .seg { background-color: var(--c-2) !important; }
 .tab { background-color: var(--c-tb) !important; }
@@ -67,6 +61,6 @@ body {
 }
 
 #namelabel::after {
-    content: " [ Theme: #{$x-name} ]";
+    content: " [ #{$x-name} ]";
     font-size: .75em;
 }

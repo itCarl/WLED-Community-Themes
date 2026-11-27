@@ -16,15 +16,11 @@ One CSS file, a new look on desktop and a better, more readable layout on mobile
 </p>
 
 <p>
-  <a href="https://github.com/itCarl/WLED-Community-Themes/blob/development/package.json"><img src="https://img.shields.io/github/package-json/v/itCarl/WLED-Community-Themes/development?label=version&color=blue" alt="Version"></a>
   <a href="https://github.com/wled/WLED"><img src="https://img.shields.io/badge/WLED-16.0%20compatible-orange" alt="WLED 16.0 compatible"></a>
   <a href="https://sass-lang.com/"><img src="https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white" alt="Sass"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/itCarl/WLED-Community-Themes" alt="License"></a>
-  <br>
   <a href="https://github.com/itCarl/WLED-Community-Themes/commits/development"><img src="https://img.shields.io/github/last-commit/itCarl/WLED-Community-Themes/development" alt="Last commit"></a>
-  <a href="https://github.com/itCarl/WLED-Community-Themes/issues"><img src="https://img.shields.io/github/issues/itCarl/WLED-Community-Themes" alt="Open issues"></a>
   <a href="https://github.com/itCarl/WLED-Community-Themes/stargazers"><img src="https://img.shields.io/github/stars/itCarl/WLED-Community-Themes?style=flat" alt="Stars"></a>
-  <a href="#contributing"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs welcome"></a>
 </p>
 
 <table>
@@ -68,16 +64,17 @@ One CSS file, a new look on desktop and a better, more readable layout on mobile
 WLED lets you replace the look of its web app with your own `skin.css`. This repository collects
 ready-made skins, written in Sass so colours are easy to change.
 
-**Made for phones too.** Besides the new colours, every theme improves the mobile layout of
+**Made for phones too.** Besides the new colours, the Xmas themes improve the mobile layout of
 stock WLED: lists use the full screen width instead of 280px, long preset and effect names are no
 longer cut off at 170px, and segment sliders span the whole row instead of 230px. More readable
-on small screens, easier to tap. Each theme folder shows a mobile screenshot.
+on small screens, easier to tap. Each theme folder shows a mobile screenshot. The fixes live in
+`shared/base/_mobile.scss` and can be added to any theme.
 
 ## Themes
 
 | Theme | Colours | Look | Download |
 | --- | --- | --- | --- |
-| [Xmas Pine](themes/xmas-pine) | <img src="themes/xmas-pine/palette.png" width="126" alt="xmas-pine colours"> | Pine green, deep red bars, gold selection, snow dots, Santa hats | [`theme-xmas-pine.css`](themes/xmas-pine/theme-xmas-pine.css) |
+| [Xmas Pine](themes/xmas-pine) | <img src="themes/xmas-pine/palette.png" width="126" alt="xmas-pine colours"> | Pine green, deep red bars, gold selection, gift pattern, Santa hats | [`theme-xmas-pine.css`](themes/xmas-pine/theme-xmas-pine.css) |
 | [Xmas Red](themes/xmas-red) | <img src="themes/xmas-red/palette.png" width="126" alt="xmas-red colours"> | Candy red, fir green bars, white accents, Santa hats | [`theme-xmas-red.css`](themes/xmas-red/theme-xmas-red.css) |
 | [Xmas Snow](themes/xmas-snow) | <img src="themes/xmas-snow/palette.png" width="126" alt="xmas-snow colours"> | Light theme: snow white and ice blue, red bars, Santa hats | [`theme-xmas-snow.css`](themes/xmas-snow/theme-xmas-snow.css) |
 | [Xmas Dark](themes/xmas-dark) | <img src="themes/xmas-dark/palette.png" width="126" alt="xmas-dark colours"> | Midnight blue with gold accents, Santa hats | [`theme-xmas-dark.css`](themes/xmas-dark/theme-xmas-dark.css) |
@@ -86,6 +83,7 @@ on small screens, easier to tap. Each theme folder shows a mobile screenshot.
 
 Colours of the Xmas themes, left to right: background, list entries, bars, accent, text.
 Each theme folder has a README with desktop and mobile screenshots.
+The Xmas themes can switch between several backgrounds, including an animated train: see [Xmas backgrounds](shared/backgrounds/xmas).
 
 ## Installation
 
@@ -105,6 +103,19 @@ Each theme folder has a README with desktop and mobile screenshots.
 > [!TIP]
 > Skins change the main app (Colors, Effects, Segments, Presets). The settings pages always use
 > WLED's built-in style and cannot be themed.
+
+### How long can names be?
+
+Measured with the Xmas themes on WLED 16.0. WLED itself limits preset names to 32 characters.
+
+| Name | PC mode | Phone (390px wide) |
+| --- | --- | --- |
+| Preset, normal text | about 34 characters, so every name WLED allows fits | about 39 characters |
+| Preset, ALL CAPS | about 27 characters | about 31 characters |
+| Segment | about 17 characters (13 in caps) | about 17 characters (13 in caps) |
+
+Longer names are cut off with "…". Segment names keep WLED's own width, because the segment
+header also holds the checkbox, timer and the expand button.
 
 ## Build from source
 
@@ -141,40 +152,24 @@ npx sass --no-source-map --style=compressed --load-path=shared themes/xmas-pine/
 
 - [x] Christmas themes: Pine, Red, Snow, Dark
 - [x] Santa hats on the tab icons
-- [x] Shared fixes for small screens (lists, preset names, segment sliders)
-- [x] One folder per theme with README, colour swatches and screenshots
-- [ ] New Year: black and gold, champagne accents
-- [ ] Halloween: black, pumpkin orange, purple
-- [ ] Easter / Spring: soft pastels, light theme
-- [ ] Valentine: dark red and rosé
-- [ ] Summer: sand and ocean blue
-- [ ] Autumn: warm browns and amber
-- [ ] Catppuccin (Mocha and Latte)
-- [ ] Nord
-- [ ] Dracula
-- [ ] Gruvbox
-- [ ] Solarized (dark and light)
-- [ ] Tokyo Night
-- [ ] AMOLED: pure black, saves power on OLED phones
-- [ ] Light / Paper: clean bright theme for daytime
-- [ ] Glass: frosted, semi-transparent surfaces over a background image
-- [ ] Neon / Cyberpunk: black with pink and cyan glow
-- [ ] Retro terminal: green monospace text on black
-- [ ] Minimal: flat, no gradients, thin borders
-- [ ] Larger touch targets for sliders and buttons
-- [ ] Compact mode: more list entries on screen
-- [ ] Better landscape layout on phones and tablets
-- [ ] High-contrast theme for accessibility
-- [ ] Wall tablet / kiosk theme: large buttons, only presets and brightness
-- [ ] Snowfall animation in the background
-- [ ] Pumpkins and bats for Halloween
-- [ ] Confetti for New Year
-- [ ] Hearts for Valentine
-- [ ] GitHub Action that compiles the themes and checks the CSS on every pull request
-- [ ] Automated screenshots of every theme (desktop and mobile)
-- [ ] Theme preview page on GitHub Pages
-- [ ] Release zip with all compiled themes
-- [ ] One-click installer that uploads a theme to a WLED controller
+- [x] Christmas backgrounds and textures
+- [x] Animated train background
+- [x] Mobile layout
+- [x] PC mode layout
+- [ ] New Year theme
+- [ ] Halloween theme
+- [ ] Valentine theme
+- [ ] Easter and spring themes
+- [ ] Summer and autumn themes
+- [ ] Catppuccin and Nord
+- [ ] Dracula and Gruvbox
+- [ ] Tokyo Night and Solarized
+- [ ] AMOLED theme
+- [ ] Light theme
+- [ ] Glass and neon styles
+- [ ] Kiosk mode for wall tablets
+- [ ] Accessibility and high contrast
+- [ ] One-click installer
 
 Ideas are welcome, open an [issue](https://github.com/itCarl/WLED-Community-Themes/issues).
 

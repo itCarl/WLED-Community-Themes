@@ -7,9 +7,15 @@ $mobile-list-max:   560px !default;
 $mobile-name-size:  16px  !default;
 $mobile-name-small: 14px  !default;
 $mobile-breakpoint: 480px !default;
+$pc-list-max:       380px !default;   // PC mode: fits WLED's 32-character preset names and keeps space between the columns
+$pc-breakpoint:     1024px !default;
 
 #bsp, #fx, #palw, #pcont, #pql, #putil, #segcont, #segutil, #segutil2, .fnd {
-    max-width: min(96vw, #{$mobile-list-max}) !important;
+    max-width: min(calc(100% - 16px), #{$mobile-list-max}) !important;
+
+    @media (min-width: $pc-breakpoint) {
+        max-width: min(calc(100% - 16px), #{$pc-list-max}) !important;
+    }
 }
 
 .lstI .lstIname, #pcont .pname {
@@ -37,3 +43,8 @@ $mobile-breakpoint: 480px !default;
 
     input { width: 100% !important; }
 }
+
+// PC mode collapses the bottom bar (inline style height: 0). Without it the scroll areas and the
+// device name run into the bottom edge of the screen - keep some space there.
+body:has(#bot[style*="height: 0"]) .tabcontent { height: calc(100% - 16px) !important; }
+#bot[style*="height: 0"] ~ #namelabel { bottom: 22px !important; }

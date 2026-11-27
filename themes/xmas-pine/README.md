@@ -1,6 +1,6 @@
 # Xmas Pine
 
-Pine green surfaces, deep red top and bottom bars, warm white text, a gold frame around the selected entry and faint snow dots on the background.
+Pine green surfaces, deep red top and bottom bars, warm white text, a gold frame around the selected entry and a subtle pattern of wrapped presents in the background.
 
 Santa hats sit on the tab icons, each one a little different. Includes the shared fixes for small
 screens: wide lists, full-width preset names and full-width segment sliders.

@@ -1,21 +1,59 @@
-// Little Santa hats on the tab icons, each one sitting a bit differently.
-// Import into any theme:  @import 'xmas/santa-hats';
+// Little Santa hats on the tab icons. Each hat sits on the outline of its own icon,
+// at a different spot and angle. Import into any theme:  @import 'xmas/santa-hats';
+//
+// Spots were measured from the WLED 16.0 icon font (24px icons): for every tab button
+// the x position on the icon, the top edge of the glyph at that x, the tilt and
+// whether the hat is mirrored.
 
-$hat-size: 23px !default;
+$hat-top-size: 19px !default;   // top bar sits at the screen edge, so a bit smaller there
+$hat-bot-size: 23px !default;
 
 $hat-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 20'%3E%3Cpath d='M3 15 Q8 3 17 3 Q22 3 22 9 L19 8.5 Q15 8 14 15 Z' fill='%23d8232c'/%3E%3Crect x='1.5' y='13.5' width='15' height='4.5' rx='2.2' fill='%23fff'/%3E%3Ccircle cx='22' cy='10' r='2.8' fill='%23fff'/%3E%3C/svg%3E";
 
-// (margin-left, top, transform) per tab button
-$hat-spots: (
-    (-7px, -12px, rotate(-22deg)),
-    (2px, -13px, scaleX(-1) rotate(-24deg)),
-    (-17px, -4px, rotate(-58deg)),
-    (5px, -8px, scaleX(-1) rotate(-48deg)),
-    (-9px, -14px, rotate(-8deg)),
-    (-14px, -10px, rotate(-36deg)),
-    (6px, -3px, scaleX(-1) rotate(-62deg)),
-    (-4px, -15px, scaleX(-1) rotate(-12deg))
+// (x on the icon, top of the glyph at x, tilt, mirrored)
+$hat-top-spots: (
+    (5.5px, 5px, -25deg, false),   // Power
+    (10px, 2px, 8deg, true),       // Timer
+    (12px, 1.5px, -10deg, false),  // Sync
+    (11.5px, 2px, 12deg, true),    // Peek
+    (8px, 2px, -15deg, false),     // Info
+    (17px, 4px, 6deg, true),       // Nodes
+    (11.5px, 2px, -6deg, false),   // Config
+    (15px, 2px, 15deg, true)       // PC Mode
 );
+$hat-bot-spots: (
+    (12px, 2.5px, -12deg, false),  // Colors
+    (8px, 2px, -15deg, false),     // Effects
+    (12px, 2.5px, 10deg, true),    // Segments
+    (16px, 2px, 12deg, true)       // Presets
+);
+
+// The brim's bottom centre is the anchor: it is placed on the icon outline and the hat rotates around it.
+@mixin santa-hats($bar, $size, $spots) {
+    $h: $size * .78;
+    $ox: $size * .34615;   // 9 / 26 of the width
+    $oy: $h * .9;
+    $sink: 1.5px;   // let the brim overlap the icon a little so it really sits on it
+
+    .tab.#{$bar} button i.icons::after {
+        width: $size;
+        height: $h;
+        transform-origin: $ox $oy;
+        // default spot, also used by any button beyond the listed ones
+        left: 12px - $ox;
+        top: 2px + $sink - $oy;
+        transform: rotate(-10deg);
+    }
+
+    @each $spot in $spots {
+        $i: index($spots, $spot);
+        .tab.#{$bar} button:nth-child(#{$i}) i.icons::after {
+            left: nth($spot, 1) - $ox;
+            top: nth($spot, 2) + $sink - $oy;
+            transform: rotate(nth($spot, 3)) if(nth($spot, 4), scaleX(-1), null);
+        }
+    }
+}
 
 .tab button i.icons {
     position: relative;
@@ -24,23 +62,16 @@ $hat-spots: (
     &::after {
         content: "";
         position: absolute;
-        width: $hat-size;
-        height: $hat-size * .78;
-        left: 50%;
         background: url($hat-svg) no-repeat center / contain;
         pointer-events: none;
     }
 }
 
-@each $spot in $hat-spots {
-    $i: index($hat-spots, $spot);
-    .tab button:nth-child(#{$i}) i.icons::after {
-        margin-left: nth($spot, 1);
-        top: nth($spot, 2);
-        transform: nth($spot, 3);
-    }
-}
+// top bar: icons 3px lower so the hats are not cut off at the top of the screen
+.tab.top button i.icons { top: 3px; }
 
-// bottom bar: keep the hats inside the bar (also hides them when the bar is off-screen in PC mode)
-#bot { overflow: hidden; }
-#bot .tab button i.icons::after { top: -8px; }
+@include santa-hats(top, $hat-top-size, $hat-top-spots);
+@include santa-hats(bot, $hat-bot-size, $hat-bot-spots);
+
+// PC mode collapses the bottom bar (inline style height: 0) - hide its hats then
+#bot[style*="height: 0"] i.icons::after { display: none; }
