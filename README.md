@@ -3,7 +3,7 @@
 <h1>WLED Community Themes</h1>
 
 <p>Custom skins for the <a href="https://github.com/wled/WLED">WLED</a> web interface.<br>
-One CSS file, a new look, and a layout that stays readable on phones.</p>
+One CSS file, a new look on desktop and a better, more readable layout on mobile.</p>
 
 <p>
   <a href="#themes"><strong>Browse themes</strong></a>
@@ -62,9 +62,10 @@ One CSS file, a new look, and a layout that stays readable on phones.</p>
 WLED lets you replace the look of its web app with your own `skin.css`. This repository collects
 ready-made skins, written in Sass so colours are easy to change.
 
-Every theme also fixes what stock WLED does badly on small screens: lists are capped at 280px,
-preset names are cut off at 170px and segment sliders stop at 230px. The themes use the full
-width instead, so long preset and effect names stay readable on a phone.
+**Made for phones too.** Besides the new colours, every theme improves the mobile layout of
+stock WLED: lists use the full screen width instead of 280px, long preset and effect names are no
+longer cut off at 170px, and segment sliders span the whole row instead of 230px. More readable
+on small screens, easier to tap. Each theme folder shows a mobile screenshot.
 
 ## Themes
 
