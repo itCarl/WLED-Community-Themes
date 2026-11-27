@@ -1,0 +1,77 @@
+// Theme: Xmas
+// Pine green surfaces, deep red bars, warm white text, gold accents, faint snow dots.
+// Also widens the lists so long preset and effect names stay readable
+// (stock WLED caps lists at 280px and preset names at 170px).
+
+$xmas-pine:      #0c1811;
+$xmas-gold:      #e8b54a;
+$xmas-red:       #d8343a;
+$xmas-green:     #3fae5a;
+$xmas-text:      #fff8e8;
+$xmas-list-max:  560px;
+
+// WLED sets its colour variables at runtime, so they need !important to stick.
+html:root {
+    --c-1: #{$xmas-pine} !important;
+    --c-2: #15291d !important;
+    --c-3: #1e3a28 !important;
+    --c-4: #2b5139 !important;
+    --c-5: #386346 !important;
+    --c-6: #4a7a58 !important;
+    --c-8: #93ad98 !important;
+    --c-b: #dccca6 !important;
+    --c-d: #efe4c8 !important;
+    --c-f: #{$xmas-text} !important;
+    --c-tb:  rgba(92, 12, 18, .88) !important;
+    --c-tbh: rgba(128, 20, 26, .9) !important;
+    --c-tba: rgba(176, 32, 38, .92) !important;
+    --c-o:   rgba(12, 24, 17, .92) !important;
+    --c-sb:  #{rgba($xmas-gold, .33)} !important;
+    --c-sbh: #{rgba($xmas-gold, .6)} !important;
+    --c-g: #{$xmas-green} !important;
+    --c-y: #{$xmas-gold} !important;
+    --c-r: #{$xmas-red} !important;
+}
+
+body {
+    background-color: $xmas-pine !important;
+    background-image:
+        radial-gradient(circle at 50% -10%, rgba($xmas-gold, .18), transparent 55%),
+        radial-gradient(rgba(255, 255, 255, .07) 1px, transparent 1.5px),
+        radial-gradient(rgba(255, 255, 255, .05) 1px, transparent 1.5px) !important;
+    background-size: 100% 100%, 46px 46px, 73px 73px !important;
+    background-position: 0 0, 0 0, 23px 31px !important;
+}
+
+.lstI, .pres, .seg { background-color: var(--c-2) !important; }
+.tab { background-color: var(--c-tb) !important; }
+.lstI.selected, #pcont .selected { box-shadow: 0 0 0 2px $xmas-gold inset !important; }
+.tab button.active, .tab button:hover { color: #ffe9b8; }
+
+#namelabel::after {
+    content: " [ Theme: Xmas ]";
+    font-size: .75em;
+}
+
+// --- readable lists ---
+#bsp, #fx, #palw, #pcont, #pql, #putil, #segcont, #segutil, #segutil2, .fnd {
+    max-width: min(96vw, #{$xmas-list-max}) !important;
+}
+
+.lstI .lstIname, #pcont .pname {
+    width: auto !important;
+    max-width: none !important;
+    padding: 8px 46px 8px 52px !important;
+    text-align: left !important;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+    .lstI .lstIname, #pcont .pname {
+        font-size: 14px;
+        padding: 8px 40px 8px 44px !important;
+    }
+}

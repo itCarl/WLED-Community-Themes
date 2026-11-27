@@ -17,6 +17,12 @@ Go! check out _WLED_ [here](https://github.com/Aircoookie/WLED) now!
 
 <img src="https://picsum.photos/id/56/720" width="50%"><img src="https://picsum.photos/id/63/720" width="50%">
 
+# 🎨 Themes
+
+| Theme | File | Look |
+| --- | --- | --- |
+| Xmas | `compiled/theme-xmas.css` | pine green surfaces, deep red bars, warm white text, gold selection, faint snow dots; wide, left-aligned lists so long preset names stay readable on phones |
+
 # 🎈 Installation
 
 Yah, it is as simple as the following 4 steps
