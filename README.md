@@ -164,4 +164,3 @@ Released under the MIT License. See [`LICENSE`](LICENSE).
 ## Acknowledgments
 
 - [WLED](https://github.com/wled/WLED) by Christian Schwinne (Aircoookie) and all contributors
-- README structure inspired by [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
