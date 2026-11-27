@@ -16,9 +16,15 @@ One CSS file, a new look on desktop and a better, more readable layout on mobile
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/WLED-16.0-orange" alt="WLED 16.0">
-  <img src="https://img.shields.io/badge/built%20with-Sass-cc6699" alt="Built with Sass">
-  <img src="https://img.shields.io/github/license/itCarl/WLED-Community-Themes" alt="MIT license">
+  <a href="https://github.com/itCarl/WLED-Community-Themes/blob/development/package.json"><img src="https://img.shields.io/github/package-json/v/itCarl/WLED-Community-Themes/development?label=version&color=blue" alt="Version"></a>
+  <a href="https://github.com/wled/WLED"><img src="https://img.shields.io/badge/WLED-16.0%20compatible-orange" alt="WLED 16.0 compatible"></a>
+  <a href="https://sass-lang.com/"><img src="https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white" alt="Sass"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/itCarl/WLED-Community-Themes" alt="License"></a>
+  <br>
+  <a href="https://github.com/itCarl/WLED-Community-Themes/commits/development"><img src="https://img.shields.io/github/last-commit/itCarl/WLED-Community-Themes/development" alt="Last commit"></a>
+  <a href="https://github.com/itCarl/WLED-Community-Themes/issues"><img src="https://img.shields.io/github/issues/itCarl/WLED-Community-Themes" alt="Open issues"></a>
+  <a href="https://github.com/itCarl/WLED-Community-Themes/stargazers"><img src="https://img.shields.io/github/stars/itCarl/WLED-Community-Themes?style=flat" alt="Stars"></a>
+  <a href="#contributing"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen" alt="PRs welcome"></a>
 </p>
 
 <table>
