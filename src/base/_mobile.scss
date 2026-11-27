@@ -1,0 +1,31 @@
+// Readable lists on phones and small screens.
+// Stock WLED caps the lists at 280px and preset names at a fixed 170px,
+// so longer names get cut off. Import into any theme:  @import 'base/mobile';
+// Optional, before the import:  $mobile-list-max: 600px;
+
+$mobile-list-max:   560px !default;
+$mobile-name-size:  16px  !default;
+$mobile-name-small: 14px  !default;
+$mobile-breakpoint: 480px !default;
+
+#bsp, #fx, #palw, #pcont, #pql, #putil, #segcont, #segutil, #segutil2, .fnd {
+    max-width: min(96vw, #{$mobile-list-max}) !important;
+}
+
+.lstI .lstIname, #pcont .pname {
+    width: auto !important;
+    max-width: none !important;
+    padding: 8px 46px 8px 52px !important;
+    text-align: left !important;
+    font-size: $mobile-name-size;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: $mobile-breakpoint) {
+    .lstI .lstIname, #pcont .pname {
+        font-size: $mobile-name-small;
+        padding: 8px 40px 8px 44px !important;
+    }
+}
