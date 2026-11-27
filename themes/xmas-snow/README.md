@@ -9,6 +9,18 @@ screens: wide lists, full-width preset names and full-width segment sliders.
 | --- | --- |
 | <img src="desktop.png" width="560" alt="Xmas Snow on desktop"> | <img src="mobile.png" width="200" alt="Xmas Snow on mobile"> |
 
+## Colours
+
+<img src="palette.png" width="126" alt="colours">
+
+| Role | Colour |
+| --- | --- |
+| Background | `#eef4f8` |
+| List entries | `#ffffff` |
+| Bars | `#b02026` |
+| Accent | `#c8202a` |
+| Text | `#0f1e26` |
+
 ## Files
 
 - [`theme-xmas-snow.css`](theme-xmas-snow.css) - ready to upload

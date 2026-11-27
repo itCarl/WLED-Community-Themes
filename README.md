@@ -68,15 +68,16 @@ width instead, so long preset and effect names stay readable on a phone.
 
 ## Themes
 
-| Theme | Look | Download |
-| --- | --- | --- |
-| [Xmas Pine](themes/xmas-pine) | Pine green, deep red bars, gold selection, snow dots, Santa hats | [`theme-xmas-pine.css`](themes/xmas-pine/theme-xmas-pine.css) |
-| [Xmas Red](themes/xmas-red) | Candy red, fir green bars, white accents, Santa hats | [`theme-xmas-red.css`](themes/xmas-red/theme-xmas-red.css) |
-| [Xmas Snow](themes/xmas-snow) | Light theme: snow white and ice blue, red bars, Santa hats | [`theme-xmas-snow.css`](themes/xmas-snow/theme-xmas-snow.css) |
-| [Xmas Dark](themes/xmas-dark) | Midnight blue with gold accents, Santa hats | [`theme-xmas-dark.css`](themes/xmas-dark/theme-xmas-dark.css) |
-| [Rainbow Static](themes/rainbow-static) | Rainbow-striped bars, rounded controls | [`theme-rainbow-static.css`](themes/rainbow-static/theme-rainbow-static.css) |
-| [Base](themes/base) | Starting point for your own theme | [`theme.css`](themes/base/theme.css) |
+| Theme | Colours | Look | Download |
+| --- | --- | --- | --- |
+| [Xmas Pine](themes/xmas-pine) | <img src="themes/xmas-pine/palette.png" width="126" alt="xmas-pine colours"> | Pine green, deep red bars, gold selection, snow dots, Santa hats | [`theme-xmas-pine.css`](themes/xmas-pine/theme-xmas-pine.css) |
+| [Xmas Red](themes/xmas-red) | <img src="themes/xmas-red/palette.png" width="126" alt="xmas-red colours"> | Candy red, fir green bars, white accents, Santa hats | [`theme-xmas-red.css`](themes/xmas-red/theme-xmas-red.css) |
+| [Xmas Snow](themes/xmas-snow) | <img src="themes/xmas-snow/palette.png" width="126" alt="xmas-snow colours"> | Light theme: snow white and ice blue, red bars, Santa hats | [`theme-xmas-snow.css`](themes/xmas-snow/theme-xmas-snow.css) |
+| [Xmas Dark](themes/xmas-dark) | <img src="themes/xmas-dark/palette.png" width="126" alt="xmas-dark colours"> | Midnight blue with gold accents, Santa hats | [`theme-xmas-dark.css`](themes/xmas-dark/theme-xmas-dark.css) |
+| [Rainbow Static](themes/rainbow-static) | <img src="themes/rainbow-static/palette.png" width="178" alt="rainbow-static colours"> | Rainbow-striped bars, rounded controls | [`theme-rainbow-static.css`](themes/rainbow-static/theme-rainbow-static.css) |
+| [Base](themes/base) | <img src="themes/base/palette.png" width="152" alt="base colours"> | Starting point for your own theme | [`theme.css`](themes/base/theme.css) |
 
+Colours of the Xmas themes, left to right: background, list entries, bars, accent, text.
 Each theme folder has a README with desktop and mobile screenshots.
 
 ## Installation
