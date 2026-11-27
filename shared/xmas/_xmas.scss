@@ -1,0 +1,72 @@
+// Shared Christmas skin. A theme sets the colour variables below, then imports this file.
+// All variables have defaults (pine green), so a theme only overrides what differs.
+
+$x-c1:  #0c1811 !default;   // page background
+$x-c2:  #15291d !default;   // list entries
+$x-c3:  #1e3a28 !default;
+$x-c4:  #2b5139 !default;   // selected / hover
+$x-c5:  #386346 !default;
+$x-c6:  #4a7a58 !default;
+$x-c8:  #93ad98 !default;   // muted text
+$x-cb:  #dccca6 !default;
+$x-cd:  #efe4c8 !default;
+$x-cf:  #fff8e8 !default;   // main text
+$x-bar:        rgba(92, 12, 18, .88) !default;    // top and bottom bars
+$x-bar-hover:  rgba(128, 20, 26, .9) !default;
+$x-bar-active: rgba(176, 32, 38, .92) !default;
+$x-bar-text:   null !default;                      // set for light themes, e.g. #fff
+$x-overlay:    rgba(12, 24, 17, .92) !default;
+$x-accent:     #e8b54a !default;                   // selection frame, slider thumbs
+$x-glow:       rgba(232, 181, 74, .18) !default;   // light at the top of the page
+$x-snow:       rgba(255, 255, 255, .07) !default;  // snow dots
+$x-green:      #3fae5a !default;
+$x-red:        #d8343a !default;
+$x-name:       "Xmas" !default;
+
+// WLED sets its colour variables at runtime, so they need !important to stick.
+html:root {
+    --c-1: #{$x-c1} !important;
+    --c-2: #{$x-c2} !important;
+    --c-3: #{$x-c3} !important;
+    --c-4: #{$x-c4} !important;
+    --c-5: #{$x-c5} !important;
+    --c-6: #{$x-c6} !important;
+    --c-8: #{$x-c8} !important;
+    --c-b: #{$x-cb} !important;
+    --c-d: #{$x-cd} !important;
+    --c-f: #{$x-cf} !important;
+    --c-tb:  #{$x-bar} !important;
+    --c-tbh: #{$x-bar-hover} !important;
+    --c-tba: #{$x-bar-active} !important;
+    --c-o:   #{$x-overlay} !important;
+    --c-sb:  #{rgba($x-accent, .33)} !important;
+    --c-sbh: #{rgba($x-accent, .6)} !important;
+    --c-g: #{$x-green} !important;
+    --c-y: #{$x-accent} !important;
+    --c-r: #{$x-red} !important;
+}
+
+body {
+    background-color: $x-c1 !important;
+    background-image:
+        radial-gradient(circle at 50% -10%, $x-glow, transparent 55%),
+        radial-gradient($x-snow 1px, transparent 1.5px),
+        radial-gradient($x-snow 1px, transparent 1.5px) !important;
+    background-size: 100% 100%, 46px 46px, 73px 73px !important;
+    background-position: 0 0, 0 0, 23px 31px !important;
+}
+
+.lstI, .pres, .seg { background-color: var(--c-2) !important; }
+.tab { background-color: var(--c-tb) !important; }
+.lstI.selected, #pcont .selected { box-shadow: 0 0 0 2px $x-accent inset !important; }
+
+@if $x-bar-text {
+    .tab button, .tab button p, .tab-label, .tab button i.icons { color: $x-bar-text !important; }
+} @else {
+    .tab button.active, .tab button:hover { color: #ffe9b8; }
+}
+
+#namelabel::after {
+    content: " [ Theme: #{$x-name} ]";
+    font-size: .75em;
+}

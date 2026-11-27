@@ -1,0 +1,46 @@
+// Little Santa hats on the tab icons, each one sitting a bit differently.
+// Import into any theme:  @import 'xmas/santa-hats';
+
+$hat-size: 23px !default;
+
+$hat-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 20'%3E%3Cpath d='M3 15 Q8 3 17 3 Q22 3 22 9 L19 8.5 Q15 8 14 15 Z' fill='%23d8232c'/%3E%3Crect x='1.5' y='13.5' width='15' height='4.5' rx='2.2' fill='%23fff'/%3E%3Ccircle cx='22' cy='10' r='2.8' fill='%23fff'/%3E%3C/svg%3E";
+
+// (margin-left, top, transform) per tab button
+$hat-spots: (
+    (-7px, -12px, rotate(-22deg)),
+    (2px, -13px, scaleX(-1) rotate(-24deg)),
+    (-17px, -4px, rotate(-58deg)),
+    (5px, -8px, scaleX(-1) rotate(-48deg)),
+    (-9px, -14px, rotate(-8deg)),
+    (-14px, -10px, rotate(-36deg)),
+    (6px, -3px, scaleX(-1) rotate(-62deg)),
+    (-4px, -15px, scaleX(-1) rotate(-12deg))
+);
+
+.tab button i.icons {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: $hat-size;
+        height: $hat-size * .78;
+        left: 50%;
+        background: url($hat-svg) no-repeat center / contain;
+        pointer-events: none;
+    }
+}
+
+@each $spot in $hat-spots {
+    $i: index($hat-spots, $spot);
+    .tab button:nth-child(#{$i}) i.icons::after {
+        margin-left: nth($spot, 1);
+        top: nth($spot, 2);
+        transform: nth($spot, 3);
+    }
+}
+
+// bottom bar: keep the hats inside the bar (also hides them when the bar is off-screen in PC mode)
+#bot { overflow: hidden; }
+#bot .tab button i.icons::after { top: -8px; }

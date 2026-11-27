@@ -1,0 +1,22 @@
+# Xmas Pine
+
+Pine green surfaces, deep red top and bottom bars, warm white text, a gold frame around the selected entry and faint snow dots on the background.
+
+Santa hats sit on the tab icons, each one a little different. Includes the shared fixes for small
+screens: wide lists, full-width preset names and full-width segment sliders.
+
+| Desktop | Mobile |
+| --- | --- |
+| <img src="desktop.png" width="560" alt="Xmas Pine on desktop"> | <img src="mobile.png" width="200" alt="Xmas Pine on mobile"> |
+
+## Files
+
+- [`theme-xmas-pine.css`](theme-xmas-pine.css) - ready to upload
+- [`theme-xmas-pine.scss`](theme-xmas-pine.scss) - source; the colours are the `$x-…` variables at the top
+
+Don't want the hats? Remove `@import 'xmas/santa-hats';` from the `.scss` and run `npm run dev`.
+
+## Install
+
+Upload `theme-xmas-pine.css` as `/skin.css` and enable **Config → User Interface → Enable custom CSS**
+(see the main [README](../../README.md#installation)).

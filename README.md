@@ -1,100 +1,159 @@
-# WLED Community Themes
+<div align="center">
 
-Custom skins for the [WLED](https://github.com/wled/WLED) web interface. Upload one CSS file to your
-controller and the WLED app gets a new look, plus a layout that stays readable on phones.
+<h1>WLED Community Themes</h1>
+
+<p>Custom skins for the <a href="https://github.com/wled/WLED">WLED</a> web interface.<br>
+One CSS file, a new look, and a layout that stays readable on phones.</p>
+
+<p>
+  <a href="#themes"><strong>Browse themes</strong></a>
+  ·
+  <a href="#installation">Install</a>
+  ·
+  <a href="https://github.com/itCarl/WLED-Community-Themes/issues">Report a bug</a>
+  ·
+  <a href="https://github.com/itCarl/WLED-Community-Themes/issues">Request a theme</a>
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/WLED-16.0-orange" alt="WLED 16.0">
+  <img src="https://img.shields.io/badge/built%20with-Sass-cc6699" alt="Built with Sass">
+  <img src="https://img.shields.io/github/license/itCarl/WLED-Community-Themes" alt="MIT license">
+</p>
 
 <table>
   <tr>
-    <th>Xmas - desktop</th>
-    <th>Xmas - mobile</th>
+    <td><img src="themes/xmas-pine/desktop.png" width="420" alt="Xmas Pine"></td>
+    <td><img src="themes/xmas-red/desktop.png" width="420" alt="Xmas Red"></td>
   </tr>
   <tr>
-    <td><img src="themes/xmas/desktop.png" width="560" alt="Xmas theme on desktop"></td>
-    <td><img src="themes/xmas/mobile.png" width="200" alt="Xmas theme on mobile"></td>
+    <td align="center"><b>Xmas Pine</b></td>
+    <td align="center"><b>Xmas Red</b></td>
   </tr>
   <tr>
-    <th>Rainbow Static - desktop</th>
-    <th>Rainbow Static - mobile</th>
+    <td><img src="themes/xmas-snow/desktop.png" width="420" alt="Xmas Snow"></td>
+    <td><img src="themes/xmas-dark/desktop.png" width="420" alt="Xmas Dark"></td>
   </tr>
   <tr>
-    <td><img src="themes/rainbow-static/desktop.png" width="560" alt="Rainbow Static theme on desktop"></td>
-    <td><img src="themes/rainbow-static/mobile.png" width="200" alt="Rainbow Static theme on mobile"></td>
+    <td align="center"><b>Xmas Snow</b></td>
+    <td align="center"><b>Xmas Dark</b></td>
   </tr>
 </table>
 
+</div>
+
+<details>
+  <summary>Table of contents</summary>
+
+- [About](#about)
+- [Themes](#themes)
+- [Installation](#installation)
+- [Build from source](#build-from-source)
+- [Write your own theme](#write-your-own-theme)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+</details>
+
+## About
+
+WLED lets you replace the look of its web app with your own `skin.css`. This repository collects
+ready-made skins, written in Sass so colours are easy to change.
+
+Every theme also fixes what stock WLED does badly on small screens: lists are capped at 280px,
+preset names are cut off at 170px and segment sliders stop at 230px. The themes use the full
+width instead, so long preset and effect names stay readable on a phone.
+
 ## Themes
 
-| Theme | Description | Download |
+| Theme | Look | Download |
 | --- | --- | --- |
-| [Xmas](themes/xmas) | Pine green surfaces, deep red bars, warm white text, gold selection, faint snow dots. Wide, readable lists on phones. | [`theme-xmas.css`](themes/xmas/theme-xmas.css) |
-| [Rainbow Static](themes/rainbow-static) | Rainbow-striped top and bottom bars, rounded buttons and list entries. | [`theme-rainbow-static.css`](themes/rainbow-static/theme-rainbow-static.css) |
-| [Base](themes/base) | Starting point for your own theme: rounded corners and a rainbow highlight. | [`theme.css`](themes/base/theme.css) |
+| [Xmas Pine](themes/xmas-pine) | Pine green, deep red bars, gold selection, snow dots, Santa hats | [`theme-xmas-pine.css`](themes/xmas-pine/theme-xmas-pine.css) |
+| [Xmas Red](themes/xmas-red) | Candy red, fir green bars, white accents, Santa hats | [`theme-xmas-red.css`](themes/xmas-red/theme-xmas-red.css) |
+| [Xmas Snow](themes/xmas-snow) | Light theme: snow white and ice blue, red bars, Santa hats | [`theme-xmas-snow.css`](themes/xmas-snow/theme-xmas-snow.css) |
+| [Xmas Dark](themes/xmas-dark) | Midnight blue with gold accents, Santa hats | [`theme-xmas-dark.css`](themes/xmas-dark/theme-xmas-dark.css) |
+| [Rainbow Static](themes/rainbow-static) | Rainbow-striped bars, rounded controls | [`theme-rainbow-static.css`](themes/rainbow-static/theme-rainbow-static.css) |
+| [Base](themes/base) | Starting point for your own theme | [`theme.css`](themes/base/theme.css) |
 
-Each theme folder has its own README with screenshots, the ready-to-upload `.css` and the `.scss` source.
+Each theme folder has a README with desktop and mobile screenshots.
 
-## Install
+## Installation
 
-1. Download the `.css` file of a theme.
-2. Upload it to your controller as **`/skin.css`**, either in the file editor at `http://<wled-ip>/edit`
-   or from a shell:
+1. Download the `.css` file of a theme from the table above.
+2. Upload it to your controller as **`/skin.css`**: open `http://<wled-ip>/edit` and use the file
+   upload, or from a shell:
    ```bash
-   curl -F "data=@theme-xmas.css;filename=/skin.css" http://<wled-ip>/upload
+   curl -F "data=@theme-xmas-pine.css;filename=/skin.css" http://<wled-ip>/upload
    ```
-   On Windows in Git Bash, put `MSYS_NO_PATHCONV=1` in front, otherwise the file name gets mangled.
-3. In the WLED app open **Config → User Interface**, tick **"Enable custom CSS"**, save and reload.
+   On Windows in Git Bash, put `MSYS_NO_PATHCONV=1` in front of the command, otherwise the file name gets mangled.
+3. In the WLED app open **Config → User Interface**, tick **Enable custom CSS**, save and reload.
 
-The "Enable custom CSS" switch is stored in the browser, so turn it on once on every phone and PC.
-To go back to the stock look, untick it or upload an empty `skin.css`.
+> [!NOTE]
+> "Enable custom CSS" is stored per browser. Turn it on once on every phone and PC.
+> To go back to the stock look, untick it or upload an empty `skin.css`.
 
-**Good to know**
-- Themes change the main app (Colors, Effects, Segments, Presets). The settings pages always use
-  WLED's built-in style, a skin cannot change them.
-- Tested with WLED 16.0.
+> [!TIP]
+> Skins change the main app (Colors, Effects, Segments, Presets). The settings pages always use
+> WLED's built-in style and cannot be themed.
 
 ## Build from source
 
-Only needed if you change a theme or write your own. Requires [Node.js](https://nodejs.org/).
+Only needed if you change a theme or write your own.
+
+**Prerequisites:** [Node.js](https://nodejs.org/)
 
 ```bash
-npm install     # installs sass locally
+git clone https://github.com/itCarl/WLED-Community-Themes.git
+cd WLED-Community-Themes
+npm install     # installs Sass locally
 npm run dev     # compiles every themes/<name>/*.scss to a .css next to it
 ```
 
 Compile a single theme:
 
 ```bash
-npx sass --no-source-map --style=compressed --load-path=shared themes/xmas/theme-xmas.scss themes/xmas/theme-xmas.css
+npx sass --no-source-map --style=compressed --load-path=shared themes/xmas-pine/theme-xmas-pine.scss themes/xmas-pine/theme-xmas-pine.css
 ```
 
 ## Write your own theme
 
-1. Copy a theme folder, e.g. `themes/xmas` to `themes/my-theme`, and rename the `.scss` file.
-2. Change the colours. WLED sets its colour variables (`--c-1` ... `--c-f`, `--c-tb`, ...) at runtime,
-   so override them on `html:root` with `!important`.
-3. Keep phones in mind: `@import 'base/mobile';` pulls in the shared fixes for small screens.
-   Stock WLED caps lists at 280px, preset names at 170px and segment sliders at 230px.
-4. Run `npm run dev`, upload the result, check the Effects, Segments and Presets tabs on a phone and a PC.
-5. Add `desktop.png` and `mobile.png` screenshots and a short README to the folder.
+1. Copy a theme folder, e.g. `themes/xmas-pine` to `themes/my-theme`, and rename the `.scss` file.
+2. Set your colours. The Xmas themes show the pattern: set a few `$x-…` variables, then
+   `@import 'xmas/xmas';`. For a theme from scratch, override WLED's colour variables
+   (`--c-1` … `--c-f`, `--c-tb`, …) on `html:root` with `!important`, because WLED sets them at runtime.
+3. Add the shared parts you want:
+   - `@import 'base/mobile';` - readable lists, preset names and sliders on small screens
+   - `@import 'xmas/santa-hats';` - Santa hats on the tab icons
+4. Run `npm run dev`, upload the result and check the Effects, Segments and Presets tabs on a phone and a PC.
+5. Add `desktop.png` (1280×720) and `mobile.png` (390×844) screenshots of the Effects tab and a short README.
 
-### Project layout
+## Roadmap
 
-```text
-themes/
-  xmas/              theme-xmas.scss, theme-xmas.css, README.md, desktop.png, mobile.png
-  rainbow-static/
-  base/
-shared/              partials, not compiled on their own
-  base/_mobile.scss  readable lists and sliders on small screens
-  utilities/         colour variables and mixins
-```
+- [x] Christmas themes (Pine, Red, Snow, Dark)
+- [x] Shared fixes for small screens
+- [ ] New Year theme (black and gold)
+- [ ] AMOLED theme (pure black)
+- [ ] Popular colour schemes (Catppuccin, Nord, Dracula)
+- [ ] Wall tablet / kiosk theme with large buttons
+
+Ideas are welcome, open an [issue](https://github.com/itCarl/WLED-Community-Themes/issues).
 
 ## Contributing
 
-New themes and fixes are welcome. Open a pull request with the theme folder (source, compiled CSS,
-README, desktop and mobile screenshots).
+New themes and fixes are welcome.
 
-## Credits
+1. Fork the repository
+2. Create a branch (`git checkout -b feature/my-theme`)
+3. Add your theme folder: `.scss` source, compiled `.css`, README, desktop and mobile screenshots
+4. Commit and push, then open a pull request against `development`
 
-Thanks to Christian Schwinne (Aircoookie) and all contributors for creating [WLED](https://github.com/wled/WLED).
+## License
 
-Released under the [MIT License](LICENSE).
+Released under the MIT License. See [`LICENSE`](LICENSE).
+
+## Acknowledgments
+
+- [WLED](https://github.com/wled/WLED) by Christian Schwinne (Aircoookie) and all contributors
+- README structure inspired by [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
