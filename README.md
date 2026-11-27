@@ -150,10 +150,8 @@ npx sass --no-source-map --style=compressed --load-path=shared themes/xmas-pine/
 
 ## Roadmap
 
-- [x] Christmas themes: Pine, Red, Snow, Dark
-- [x] Santa hats on the tab icons
-- [x] Christmas backgrounds and textures
-- [x] Animated train background
+- [x] Project setup and build pipeline
+- [x] Xmas themes
 - [x] Mobile layout
 - [x] PC mode layout
 - [ ] New Year theme

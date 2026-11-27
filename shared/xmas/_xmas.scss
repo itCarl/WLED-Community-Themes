@@ -22,7 +22,7 @@ $x-snow:       rgba(255, 255, 255, .07) !default;  // snow dots
 $x-green:      #3fae5a !default;
 $x-red:        #d8343a !default;
 $x-name:       "Xmas" !default;
-$x-background: snow-dots !default;               // see shared/backgrounds/xmas: snow-dots, snowfall, stars, bokeh, tree-pattern, gifts, train, own-image
+$x-background: snow-dots !default;               // see shared/backgrounds/xmas: snow-dots, snowfall, bokeh, tree-pattern, gifts, train, own-image
 
 // WLED sets its colour variables at runtime, so they need !important to stick.
 html:root {

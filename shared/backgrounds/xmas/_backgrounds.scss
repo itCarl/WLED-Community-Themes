@@ -1,7 +1,6 @@
 // Background variants for the Xmas themes. Pick one with  $x-background  before importing 'xmas/xmas':
 //   snow-dots  - faint snow dots and a warm glow at the top (default)
 //   snowfall   - the snow dots slowly falling
-//   stars      - small gold stars on the night sky
 //   bokeh      - large, soft out-of-focus Christmas lights
 //   tree-pattern - texture variant 1: little fir trees with a gold star, and snowflakes
 //   gifts        - texture variant 2: little wrapped presents with bows
@@ -43,9 +42,10 @@
         body {
             background-image: $glow-layer, $dots, $dots !important;
             background-size: 100% 100%, 46px 46px, 73px 73px !important;
-            background-position: 0 0, 0 0, 23px 31px !important;
             background-attachment: fixed !important;
         }
+        // not !important: an animation cannot override !important declarations
+        body { background-position: 0 0, 0 0, 23px 31px; }
         @if $kind == snowfall {
             body { animation: x-snowfall 40s linear infinite; }
             @keyframes x-snowfall {
@@ -54,18 +54,6 @@
             @media (prefers-reduced-motion: reduce) {
                 body { animation: none; }
             }
-        }
-    } @else if $kind == stars {
-        $star: rgba($accent, .55);
-        body {
-            background-image:
-                $glow-layer,
-                radial-gradient($star 1.2px, transparent 2px),
-                radial-gradient(rgba(255, 255, 255, .35) 1px, transparent 1.5px),
-                radial-gradient($star .8px, transparent 1.5px) !important;
-            background-size: 100% 100%, 137px 137px, 89px 89px, 53px 53px !important;
-            background-position: 0 0, 11px 17px, 43px 61px, 29px 7px !important;
-            background-attachment: fixed !important;
         }
     } @else if $kind == bokeh {
         body {
