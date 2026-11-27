@@ -1,19 +1,7 @@
-# Welcome WLED community themes! 🌈
+# WLED Community Themes
 
-Give your WLED installation a new customized look with these Themes
-
-## You don't know what **WLED** is?! 😱
-Go! check out _WLED_ [here](https://github.com/Aircoookie/WLED) now!
-
-# ⚙️ Features
-
-- xx Themes
-- fun new styles for your _WLED_ project
-- easy installation process
-
-
-
-# 🎨 Themes
+Custom skins for the [WLED](https://github.com/wled/WLED) web interface. Upload one CSS file to your
+controller and the WLED app gets a new look, plus a layout that stays readable on phones.
 
 <table>
   <tr>
@@ -21,70 +9,92 @@ Go! check out _WLED_ [here](https://github.com/Aircoookie/WLED) now!
     <th>Xmas - mobile</th>
   </tr>
   <tr>
-    <td><img src="screenshots/xmas-desktop.png" width="560" alt="Xmas theme on desktop"></td>
-    <td><img src="screenshots/xmas-mobile.png" width="200" alt="Xmas theme on mobile"></td>
+    <td><img src="themes/xmas/desktop.png" width="560" alt="Xmas theme on desktop"></td>
+    <td><img src="themes/xmas/mobile.png" width="200" alt="Xmas theme on mobile"></td>
   </tr>
   <tr>
     <th>Rainbow Static - desktop</th>
     <th>Rainbow Static - mobile</th>
   </tr>
   <tr>
-    <td><img src="screenshots/rainbow-static-desktop.png" width="560" alt="Rainbow Static theme on desktop"></td>
-    <td><img src="screenshots/rainbow-static-mobile.png" width="200" alt="Rainbow Static theme on mobile"></td>
+    <td><img src="themes/rainbow-static/desktop.png" width="560" alt="Rainbow Static theme on desktop"></td>
+    <td><img src="themes/rainbow-static/mobile.png" width="200" alt="Rainbow Static theme on mobile"></td>
   </tr>
 </table>
 
-Ready-to-upload CSS lives in [`compiled/`](compiled), the SCSS sources in [`src/`](src).
+## Themes
 
-| Theme | Ready to upload | Source | Look |
-| --- | --- | --- | --- |
-| Xmas | [`compiled/theme-xmas.css`](compiled/theme-xmas.css) | [`src/theme-xmas.scss`](src/theme-xmas.scss) | pine green surfaces, deep red bars, warm white text, gold selection, faint snow dots; wide, left-aligned lists so long preset names stay readable on phones |
-| Rainbow Static | [`compiled/theme-rainbow-static.css`](compiled/theme-rainbow-static.css) | [`src/theme-rainbow-static.scss`](src/theme-rainbow-static.scss) | rainbow top/bottom bars, rounded controls |
-| Base | [`compiled/theme.css`](compiled/theme.css) | [`src/theme.scss`](src/theme.scss) | rounded corners and rainbow selection; picks a theme via `@import` |
+| Theme | Description | Download |
+| --- | --- | --- |
+| [Xmas](themes/xmas) | Pine green surfaces, deep red bars, warm white text, gold selection, faint snow dots. Wide, readable lists on phones. | [`theme-xmas.css`](themes/xmas/theme-xmas.css) |
+| [Rainbow Static](themes/rainbow-static) | Rainbow-striped top and bottom bars, rounded buttons and list entries. | [`theme-rainbow-static.css`](themes/rainbow-static/theme-rainbow-static.css) |
+| [Base](themes/base) | Starting point for your own theme: rounded corners and a rainbow highlight. | [`theme.css`](themes/base/theme.css) |
 
-# 🎈 Installation
+Each theme folder has its own README with screenshots, the ready-to-upload `.css` and the `.scss` source.
 
-Yah, it is as simple as the following 4 steps
+## Install
 
-1. Download a _.css_ theme file
-2. (If you wish to change something, you can do so)
-3. Upload the theme/skin to your device that runs _WLED_
-4. Done.
+1. Download the `.css` file of a theme.
+2. Upload it to your controller as **`/skin.css`**, either in the file editor at `http://<wled-ip>/edit`
+   or from a shell:
+   ```bash
+   curl -F "data=@theme-xmas.css;filename=/skin.css" http://<wled-ip>/upload
+   ```
+   On Windows in Git Bash, put `MSYS_NO_PATHCONV=1` in front, otherwise the file name gets mangled.
+3. In the WLED app open **Config → User Interface**, tick **"Enable custom CSS"**, save and reload.
 
-# 🛠️ Build from source
+The "Enable custom CSS" switch is stored in the browser, so turn it on once on every phone and PC.
+To go back to the stock look, untick it or upload an empty `skin.css`.
 
-Only needed if you change a theme or write your own. You need [Node.js](https://nodejs.org/).
+**Good to know**
+- Themes change the main app (Colors, Effects, Segments, Presets). The settings pages always use
+  WLED's built-in style, a skin cannot change them.
+- Tested with WLED 16.0.
+
+## Build from source
+
+Only needed if you change a theme or write your own. Requires [Node.js](https://nodejs.org/).
 
 ```bash
-npm install          # installs sass locally
-npm run dev          # compiles every src/*.scss to compiled/*.css (compressed, no source maps)
+npm install     # installs sass locally
+npm run dev     # compiles every themes/<name>/*.scss to a .css next to it
 ```
 
 Compile a single theme:
 
 ```bash
-npx sass --no-source-map --style=compressed src/theme-xmas.scss compiled/theme-xmas.css
+npx sass --no-source-map --style=compressed --load-path=shared themes/xmas/theme-xmas.scss themes/xmas/theme-xmas.css
 ```
 
-Files starting with `_` are partials; they are not compiled on their own:
-- `src/utilities/` - shared variables and mixins
-- `src/base/_mobile.scss` - readable lists on phones and small screens (wide lists, full-width, left-aligned preset names). Add it to any theme with `@import 'base/mobile';` and tune it with `$mobile-list-max` (default `560px`) before the import.
+## Write your own theme
 
-Tips for writing a theme:
-- WLED sets its colour variables (`--c-1` ... `--c-f`, `--c-tb`, ...) at runtime, so override them on `html:root` with `!important`.
-- Stock WLED caps the lists at `280px` (`#pcont`, `#fx`, `#palw`, `#segcont`, ...) and preset names at `width: 170px` (`.pname`).
+1. Copy a theme folder, e.g. `themes/xmas` to `themes/my-theme`, and rename the `.scss` file.
+2. Change the colours. WLED sets its colour variables (`--c-1` ... `--c-f`, `--c-tb`, ...) at runtime,
+   so override them on `html:root` with `!important`.
+3. Keep phones in mind: `@import 'base/mobile';` pulls in the shared fixes for small screens.
+   Stock WLED caps lists at 280px, preset names at 170px and segment sliders at 230px.
+4. Run `npm run dev`, upload the result, check the Effects, Segments and Presets tabs on a phone and a PC.
+5. Add `desktop.png` and `mobile.png` screenshots and a short README to the folder.
 
-# 📤 Upload to WLED
+### Project layout
 
-1. Open `http://<wled-ip>/edit` and upload the `.css` file as **`/skin.css`**, or from a shell:
-   ```bash
-   curl -F "data=@compiled/theme-xmas.css;filename=/skin.css" http://<wled-ip>/upload
-   ```
-   (Git Bash on Windows: prefix with `MSYS_NO_PATHCONV=1`, otherwise the file name gets mangled.)
-2. In the WLED UI: **Config → User Interface → "Enable custom CSS"**, save, reload.
-   This switch is stored per browser, so enable it once on every phone/PC.
+```text
+themes/
+  xmas/              theme-xmas.scss, theme-xmas.css, README.md, desktop.png, mobile.png
+  rainbow-static/
+  base/
+shared/              partials, not compiled on their own
+  base/_mobile.scss  readable lists and sliders on small screens
+  utilities/         colour variables and mixins
+```
 
-If you came up with a really cool new Theme/Skin idea feel free to contribute to this repository so that others can use it as well 😄
+## Contributing
 
-# ❤️‍🔥 Other
-Big thanks to Christian Schwinne 'Aircookie' for creating _WLED_.
+New themes and fixes are welcome. Open a pull request with the theme folder (source, compiled CSS,
+README, desktop and mobile screenshots).
+
+## Credits
+
+Thanks to Christian Schwinne (Aircoookie) and all contributors for creating [WLED](https://github.com/wled/WLED).
+
+Released under the [MIT License](LICENSE).

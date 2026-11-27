@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "dev": "sass --no-source-map --style=compressed src:compiled"
+    "dev": "sass --no-source-map --style=compressed --load-path=shared themes:themes"
   },
   "repository": {
     "type": "git",
