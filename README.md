@@ -59,7 +59,7 @@ One CSS file, a new look on desktop and a better, more readable layout on mobile
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
-- [Acknowledgments](#acknowledgments)
+- [Acknowledgments](#-acknowledgments)
 
 </details>
 
@@ -161,6 +161,6 @@ New themes and fixes are welcome.
 
 Released under the MIT License. See [`LICENSE`](LICENSE).
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
-- [WLED](https://github.com/wled/WLED) by Christian Schwinne (Aircoookie) and all contributors
+- 💡 [WLED](https://github.com/wled/WLED) by Christian Schwinne (Aircoookie) and all contributors ❤️
