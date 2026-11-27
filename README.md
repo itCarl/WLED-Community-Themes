@@ -1,7 +1,3 @@
-<p align="center">
-  <img width="600" src="https://picsum.photos/id/20/720">
-</p>
-
 # Welcome WLED community themes! 🌈
 
 Give your WLED installation a new customized look with these Themes
@@ -15,9 +11,28 @@ Go! check out _WLED_ [here](https://github.com/Aircoookie/WLED) now!
 - fun new styles for your _WLED_ project
 - easy installation process
 
-<img src="https://picsum.photos/id/56/720" width="50%"><img src="https://picsum.photos/id/63/720" width="50%">
+
 
 # 🎨 Themes
+
+<table>
+  <tr>
+    <th>Xmas - desktop</th>
+    <th>Xmas - mobile</th>
+  </tr>
+  <tr>
+    <td><img src="screenshots/xmas-desktop.png" width="560" alt="Xmas theme on desktop"></td>
+    <td><img src="screenshots/xmas-mobile.png" width="200" alt="Xmas theme on mobile"></td>
+  </tr>
+  <tr>
+    <th>Rainbow Static - desktop</th>
+    <th>Rainbow Static - mobile</th>
+  </tr>
+  <tr>
+    <td><img src="screenshots/rainbow-static-desktop.png" width="560" alt="Rainbow Static theme on desktop"></td>
+    <td><img src="screenshots/rainbow-static-mobile.png" width="200" alt="Rainbow Static theme on mobile"></td>
+  </tr>
+</table>
 
 Ready-to-upload CSS lives in [`compiled/`](compiled), the SCSS sources in [`src/`](src).
 
