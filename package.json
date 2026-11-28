@@ -3,9 +3,8 @@
   "version": "0.0.1",
   "description": "A collection of styles for your WLED installation",
   "license": "MIT",
-  "main": "index.js",
   "scripts": {
-    "dev": "sass --no-source-map --style=compressed src:compiled"
+    "dev": "sass --no-source-map --style=compressed --load-path=shared themes:themes"
   },
   "repository": {
     "type": "git",
@@ -20,7 +19,7 @@
     "creative",
     "custimization"
   ],
-  "author": "Maximilian Mewes",
+  "author": "itCarl",
   "bugs": {
     "url": "https://github.com/itCarl/WLED-Community-Themes/issues"
   },

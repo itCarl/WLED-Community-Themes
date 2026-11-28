@@ -1,0 +1,13 @@
+// Theme: Xmas Dark - midnight blue surfaces, gold active tab and accents, Santa hats.
+$x-name: "Xmas Dark";
+$x-c1: #0a0f1f;  $x-c2: #121a33;  $x-c3: #1b2547;  $x-c4: #26335e;  $x-c5: #334273;  $x-c6: #44558a;
+$x-c8: #9aa6c8;  $x-cb: #e3d3a4;  $x-cd: #f1e6c6;  $x-cf: #fff8e6;
+$x-bar: rgba(20, 28, 58, .92);  $x-bar-hover: rgba(40, 52, 95, .92);  $x-bar-active: rgba(120, 92, 30, .95);
+$x-overlay: rgba(10, 15, 31, .92);
+$x-accent: #e8b54a;
+$x-glow: rgba(232, 181, 74, .25);
+$x-snow: rgba(255, 255, 255, .07);
+
+@import 'xmas/xmas';
+@import 'xmas/santa-hats';
+@import 'base/mobile';

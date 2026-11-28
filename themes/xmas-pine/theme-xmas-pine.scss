@@ -1,0 +1,7 @@
+// Theme: Xmas Pine - pine green surfaces, deep red bars, warm white text, gold accents, Santa hats.
+$x-name: "Xmas Pine";
+$x-background: gifts;
+
+@import 'xmas/xmas';
+@import 'xmas/santa-hats';
+@import 'base/mobile';

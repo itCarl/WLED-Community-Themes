@@ -1,0 +1,50 @@
+// Readable lists on phones and small screens.
+// Stock WLED caps the lists at 280px and preset names at a fixed 170px,
+// so longer names get cut off. Import into any theme:  @import 'base/mobile';
+// Optional, before the import:  $mobile-list-max: 600px;
+
+$mobile-list-max:   560px !default;
+$mobile-name-size:  16px  !default;
+$mobile-name-small: 14px  !default;
+$mobile-breakpoint: 480px !default;
+$pc-list-max:       380px !default;   // PC mode: fits WLED's 32-character preset names and keeps space between the columns
+$pc-breakpoint:     1024px !default;
+
+#bsp, #fx, #palw, #pcont, #pql, #putil, #segcont, #segutil, #segutil2, .fnd {
+    max-width: min(calc(100% - 16px), #{$mobile-list-max}) !important;
+
+    @media (min-width: $pc-breakpoint) {
+        max-width: min(calc(100% - 16px), #{$pc-list-max}) !important;
+    }
+}
+
+.lstI .lstIname, #pcont .pname {
+    width: auto !important;
+    max-width: none !important;
+    padding: 8px 46px 8px 52px !important;
+    text-align: left !important;
+    font-size: $mobile-name-size;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: $mobile-breakpoint) {
+    .lstI .lstIname, #pcont .pname {
+        font-size: $mobile-name-small;
+        padding: 8px 40px 8px 44px !important;
+    }
+}
+
+// Segment brightness sliders: stock WLED fixes them at 230px; use the full row next to the power icon
+.seg .sbs .sliderwrap {
+    width: calc(100% - 64px) !important;
+    max-width: none !important;
+
+    input { width: 100% !important; }
+}
+
+// PC mode collapses the bottom bar (inline style height: 0). Without it the scroll areas and the
+// device name run into the bottom edge of the screen - keep some space there.
+body:has(#bot[style*="height: 0"]) .tabcontent { height: calc(100% - 16px) !important; }
+#bot[style*="height: 0"] ~ #namelabel { bottom: 22px !important; }

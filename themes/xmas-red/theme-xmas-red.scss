@@ -1,0 +1,13 @@
+// Theme: Xmas Red - deep candy red surfaces, fir green bars, white text and accents, Santa hats.
+$x-name: "Xmas Red";
+$x-c1: #2a070b;  $x-c2: #4a0f16;  $x-c3: #5e1820;  $x-c4: #7a2029;  $x-c5: #8f2b34;  $x-c6: #a63a43;
+$x-c8: #d9a3a6;  $x-cb: #f2dede;  $x-cd: #fbeeee;  $x-cf: #ffffff;
+$x-bar: rgba(20, 70, 35, .92);  $x-bar-hover: rgba(30, 95, 48, .92);  $x-bar-active: rgba(44, 130, 66, .95);
+$x-overlay: rgba(42, 7, 11, .92);
+$x-accent: #ffffff;
+$x-glow: rgba(255, 255, 255, .14);
+$x-snow: rgba(255, 255, 255, .08);
+
+@import 'xmas/xmas';
+@import 'xmas/santa-hats';
+@import 'base/mobile';

@@ -1,0 +1,14 @@
+// Theme: Xmas Snow - light theme: snow white and ice blue surfaces, red bars, Santa hats.
+$x-name: "Xmas Snow";
+$x-c1: #eef4f8;  $x-c2: #ffffff;  $x-c3: #dde8f0;  $x-c4: #c9dbe8;  $x-c5: #b3cadb;  $x-c6: #9bb7cc;
+$x-c8: #5f7a8c;  $x-cb: #33505f;  $x-cd: #20343f;  $x-cf: #0f1e26;
+$x-bar: rgba(176, 32, 38, .92);  $x-bar-hover: rgba(200, 45, 50, .92);  $x-bar-active: rgba(140, 20, 26, .95);
+$x-bar-text: #ffffff;
+$x-overlay: rgba(238, 244, 248, .95);
+$x-accent: #c8202a;
+$x-glow: rgba(180, 210, 235, .5);
+$x-snow: rgba(90, 130, 170, .16);
+
+@import 'xmas/xmas';
+@import 'xmas/santa-hats';
+@import 'base/mobile';
