@@ -173,7 +173,7 @@ Ideas are welcome, open an [issue](https://github.com/itCarl/WLED-Community-Them
 
 ## Contributing
 
-New themes and fixes are welcome.
+New themes and fixes are welcome, see [CONTRIBUTING.md](CONTRIBUTING.md) and the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 1. Fork the repository
 2. Create a branch (`git checkout -b feature/my-theme`)

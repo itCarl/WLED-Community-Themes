@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: WLED itself (firmware, effects, hardware)
+    url: https://github.com/wled/WLED/issues
+    about: Problems that also happen without a custom skin belong to the WLED project.
+  - name: WLED documentation
+    url: https://kno.wled.ge/
+    about: How WLED works, including the custom CSS setting.

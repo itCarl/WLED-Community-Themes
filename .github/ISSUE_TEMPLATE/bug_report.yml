@@ -1,0 +1,58 @@
+name: Bug report
+description: A theme looks wrong or breaks part of the WLED UI
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting! A screenshot helps more than anything else.
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Theme
+      options:
+        - Xmas Pine
+        - Xmas Red
+        - Xmas Snow
+        - Xmas Dark
+        - Rainbow Static
+        - Base
+        - Other / own build
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong?
+      description: What did you expect, and what do you see instead?
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Drag and drop an image here.
+  - type: dropdown
+    id: view
+    attributes:
+      label: Where does it happen?
+      multiple: true
+      options:
+        - Phone
+        - Tablet
+        - Desktop
+        - PC mode
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      placeholder: e.g. Chrome 131 on Android, Safari on iOS 18
+    validations:
+      required: true
+  - type: input
+    id: wled
+    attributes:
+      label: WLED version
+      description: Shown in the Info tab.
+      placeholder: e.g. 16.0.1
+    validations:
+      required: true
