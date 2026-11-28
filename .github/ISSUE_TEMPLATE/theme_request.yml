@@ -1,0 +1,22 @@
+name: Theme idea
+description: Suggest a new theme, background or improvement
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Idea
+      description: What should it look like? Colours, mood, occasion.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Screenshots, colour palettes or links that show what you have in mind.
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Contribution
+      options:
+        - label: I would like to build this myself and open a pull request
